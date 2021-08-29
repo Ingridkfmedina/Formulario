@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+
+<!-- A seguir temos o cabeçalho, que contém o título da página com as tags title, e logo após a tag meta,
+   com o atribulto charset que indica o formato de codificação de caracteres utilizado no documento. -->
+
+<head>
+  <title>Atualização de dados Itaú Unibanco</title>
+  <meta charset="utf-8">
+</head>
+
+<!-- A seguir a tag body, onde foi desenvolvido a parte principal do código, ou seja, 
+  todo o conteúdo que será exibido no navegador. Também foi atribuído a semântica, 
+  onde a parte introdutória está contida na tag header, o conteúdo principal na tag main, e o rodapé na tag footer. -->
+
+<body>
+  <header>
+    <h1>ATUALIZAÇÃO CADASTRAL DE COLABORADORES ITAÚ UNIBANCO.</h1>
+    <p>Você está no formulario de atualização cadastral de colaboradores. Preencha todos os campos para que possamos
+      está com seus dados em dia.</p>
+    <br>
+  </header>
+  <main>
+    <form name="formulario">
+
+      <!-- todos os inputs foram agrupados dentro das tags fieldset, com as tags legend definindo o nome de cada grupo. -->
+      <fieldset>
+        <legend><strong>Dados:</strong></legend>
+        <label for="nomecompleto"><strong>Nome completo:</strong></label>
+        <input type="text" name="nomeCompleto" id="nomecompleto" placeholder="Informe seu nome e sobrenome:" required>
+        <label for="cpf"><strong>CPF:</strong></label>
+        <input tipe="text" name="cpf" maxlength="11" placeholder="Insira aqui o seu CPF:" id="cpf" required>
+        <label for="rg"><strong>RG:</strong></label>
+        <input type="text" name="rg" maxlength="13" id="rg" placeholder="Número do RG:" required>
+        <label for="sx"><strong>Sexo:</strong></label>
+        <select id="sx">
+          <option>selecione...</option>
+          <option>feminino</option>
+          <option>masculino</option>
+          <option>outros</option>
+        </select>
+        <br><br>
+        <label for="email"><strong>E-mail:</strong></label>
+        <input type="e-mail" name="email" placeholder="esample@gmail.com" id="email" required>
+        <label for="telfixo"><strong>Telefone fixo:</strong></label>
+        <input type="tel" name="telefonefixo" id="telfixo">
+        <label for="celular"><strong>Celular:</strong></label>
+        <input type="tel" name="telcelular" id="celular" required>
+        <br><br>
+        <label><strong>Possui alguma deficiência?</strong></label>
+        <label for="sim">sim</label> <input type="radio" name="perguntaDeficiencia" id="sim" value="sim">
+        <label for="nao">não</label> <input type="radio" name="perguntaDeficiencia" id="nao" value="não">
+        <br><br>
+        <label for="inform"> <strong>Informe a deficiência caso possua:</strong></label>
+        <input type="text" name="informeSuaDeficiencia" id="inform">
+      </fieldset>
+      <br>
+      <fieldset>
+        <legend><strong>Endereço</strong></legend>
+        <label for="cep"><strong>CEP:</strong></label>
+        <input type="text" name="cep" maxlength="8" id="cep">
+        <label for="rua"><strong>Rua:</strong></label>
+        <input type="text" name="rua" id="rua" required> <br>
+        <label for="numero"><strong>Número:</strong></label>
+        <input type="number" name="numero" id="numero" required> <br>
+        <label for="bairro"><strong>Bairro:</strong></label>
+        <input type="text" name="bairro" id="bairro" required> <br>
+        <label for="cidade"><strong>Cidade:</strong></label>
+        <input type="text" name="cidade" id="cidade" required> <br>
+        <label for="estado"><strong>Estado:</strong></label>
+        <select name="estado" id="estado">
+          <option>...</option>
+          <option value="ac">Acre</option>
+          <option value="al">Alagoas</option>
+          <option value="am">Amazonas</option>
+          <option value="ap">Amapá</option>
+          <option value="ba">Bahia</option>
+          <option value="ce">Ceará</option>
+          <option value="df">Distrito Federal</option>
+          <option value="es">Espírito Santo</option>
+          <option value="go">Goiás</option>
+          <option value="ma">Maranhão</option>
+          <option value="mt">Mato Grosso</option>
+          <option value="ms">Mato Grosso do Sul</option>
+          <option value="mg">Minas Gerais</option>
+          <option value="pa">Pará</option>
+          <option value="pb">Paraíba</option>
+          <option value="pr">Paraná</option>
+          <option value="pe">Pernambuco</option>
+          <option value="pi">Piauí</option>
+          <option value="rj">Rio de Janeiro</option>
+          <option value="rn">Rio Grande do Norte</option>
+          <option value="ro">Rondônia</option>
+          <option value="rs">Rio Grande do Sul</option>
+          <option value="rr">Roraima</option>
+          <option value="sc">Santa Catarina</option>
+          <option value="se">Sergipe</option>
+          <option value="sp">São Paulo</option>
+          <option value="to">Tocantins</option>
+        </select>
+      </fieldset>
+      <br>
+      <label for="info"><strong>Para informações complementares, informe no campo a seguir:</strong></label>
+      <p><textarea name="observacao" id="info" placeholder="Deixe sua mensagem:"></textarea></p>
+      <input type="submit" name="enviar" onclick="pergunta1();" value="Enviar">
+      <input type="reset" onclick="pergunta2();" value="Limpar">
+      <br>
+      <br>
+    </form>
+  </main>
+  <footer>
+    <p>
+      © Ingrid Medina Trilha preparatória Gama Academy Itaú Formação tech 2021. <br>
+    </p>
+  </footer>
+
+  <!-- Abaixo, duas funções do javascript, cuja a primeira exibe uma mensagem ao ser acionada pelo botão submit,
+     e a segunda exibe outra mensagem ao ser acionada com o botão reset. Ambas estão vinculadas ao evento unclick. -->
+  <script>
+    function pergunta1() {
+      if (confirm("Deseja enviar o formulário agora?")) {
+        return true;
+      }
+      else {
+        return false;
+      }
+    }
+
+    function pergunta2() {
+      if (confirm("Esta ação irá resetar todos os campos, e seu conteúdo será apagado.")) {
+        return true;
+      }
+      else {
+        return false;
+      }
+    }
+  </script>
+</body>
+
+</html>
